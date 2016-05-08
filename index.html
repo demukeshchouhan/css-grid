@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-basic</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body ng-cloak ng-controller="mainCtrl">
+    
+    <div class="container">
+        <div class="row">
+            <div class="column col-md-6">
+                <div class="padbox" >
+                <h4>{{ name }}</h4>
+                <button>Clicked</button>
+                </div>
+            </div>
+            
+             <div class="column col-md-6">
+               <div class="padbox">
+                <h4>this is angular column-6</h4>
+                <button>Clicked</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="column col-md-6">
+                <form name="myForm" class="form_container">
+                    <input type="text" ng-model="handler" name="myField" required minlength="5" />
+                    <div ng-messages="myForm.myField.$error">
+                        <div ng-message="required">
+                            The field is empty
+                        </div>
+                        <div ng-message="minlength">
+                            The value is too short
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            
+             <div class="column col-md-6">
+                   <h3>{{ lowercasehandler() }}</h3>
+            </div>
+        </div>
+    </div>
+    
+    
+ <script src="https://code.angularjs.org/1.4.9/angular.min.js"></script>
+ <script src="https://code.angularjs.org/1.4.9/angular-messages.min.js"></script>
+ <script src="https://code.angularjs.org/1.4.9/angular-resource.min.js"></script>
+ <script src="app.js"></script>
+</body>
+</html>
